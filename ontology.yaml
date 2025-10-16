@@ -1,0 +1,28 @@
+nodes:
+- label: Product
+  table: products
+- label: Review
+  table: reviews
+- label: User
+  table: users
+relationships:
+- source: Review
+  target: Product
+  type: REVIEWS
+  from_key: product_id
+  to_key: id
+- source: Review
+  target: User
+  type: WRITTEN_BY
+  from_key: user_id
+  to_key: id
+- source: Review
+  target: User
+  type: REVIEWS_USERS
+  from_key: user_id
+  to_key: id
+- source: Review
+  target: Product
+  type: REVIEWS_PRODUCTS
+  from_key: product_id
+  to_key: id
